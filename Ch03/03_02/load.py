@@ -5,20 +5,22 @@ kb = 2**10
 
 csv_file = Path('track.csv')
 csv_file.stat().st_size / kb
+#csv_file
 
 # %%
 !wsl cat /etc/os-release
 
 # %%
-%%gitbash
+%%bash
 which bash
+python -V
 cat /etc/os-release
 
 # %%
-!wsl ls -lh $csv_file
+#%%bash
+#ls -lh $csv_file
 
-# %%
-%lsmagic
+!wsl ls -lh $csv_file
 
 # %% First few lines & line count
 count = 0
@@ -30,10 +32,10 @@ with csv_file.open() as fp:
 print(f'{count} lines')
 
 # %% First few lines
-!head -5 $csv_file
+!wsl head -5 $csv_file
 
 # %% Line count
-!wc -l $csv_file
+!wsl wc -l $csv_file
 
 # %% Load to data frame
 import pandas as pd
@@ -47,3 +49,5 @@ df.columns
 df.info()
 # %%
 df.describe()
+
+# %%
