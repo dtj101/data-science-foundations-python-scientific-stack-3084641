@@ -7,7 +7,18 @@ csv_file = Path('track.csv')
 csv_file.stat().st_size / kb
 
 # %%
-!ls -lh $csv_file
+!wsl cat /etc/os-release
+
+# %%
+%%gitbash
+which bash
+cat /etc/os-release
+
+# %%
+!wsl ls -lh $csv_file
+
+# %%
+%lsmagic
 
 # %% First few lines & line count
 count = 0
