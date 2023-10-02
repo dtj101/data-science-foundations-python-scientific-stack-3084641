@@ -19,6 +19,7 @@ plt.plot(xs, ys)
 kb = 2**10
 
 csv_file = Path('track.csv')
+#csv_file = Path(__file__).with_name('track.csv')
 csv_file.stat().st_size / kb
 
 # %%
@@ -32,3 +33,5 @@ df.columns
 df.info()
 # %%
 df.describe()
+
+# %%
